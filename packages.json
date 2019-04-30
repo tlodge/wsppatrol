@@ -1,0 +1,166 @@
+{
+    "packageId": "1896805f73ae7b",
+    "name": "patrols",
+    "description": "reporting on issues noticed during patrols",
+    "buttons": [
+        {
+            "buttonId": "1e63629ef0fc4a",
+            "name": "patrol notes",
+            "description": "report issues on patrol",
+            "type": "action",
+            "questions": [
+                {
+                    "question": "who is patrolling",
+                    "type": "options",
+                    "values": {
+                        "options": [
+                            "alfonso",
+                            "jim",
+                            "bob",
+                            "temporary staff"
+                        ],
+                        "multiple": "single",
+                        "none": false,
+                        "description": "please select yourself from the following list"
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "2037207a8fe97e",
+                    "number": 1
+                },
+                {
+                    "question": "notes",
+                    "type": "freetext",
+                    "values": {
+                        "format": "large",
+                        "description": "please note down anything worth logging.  When patrolling please pay particular attention to cleanliness and any damage to communal areas"
+                    },
+                    "validators": [],
+                    "compulsory": false,
+                    "questionId": "550be04909fbf4",
+                    "number": 2
+                },
+                {
+                    "question": "do you want to provide a photo",
+                    "type": "options",
+                    "values": {
+                        "options": [
+                            "take a photo",
+                            "no photo"
+                        ],
+                        "multiple": "single",
+                        "none": false,
+                        "description": "if it makes sense to take a photo of the issue for evidence, then please do so"
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "24e5c9ef07c87e",
+                    "number": 3
+                },
+                {
+                    "question": "take a picture",
+                    "type": "camera",
+                    "values": {},
+                    "validators": [],
+                    "compulsory": false,
+                    "questionId": "17bc5ab72a1b48",
+                    "number": 4
+                }
+            ],
+            "navigation": {
+                "id": "2037207a8fe97e",
+                "type": "node",
+                "parent": null,
+                "children": [
+                    {
+                        "id": "550be04909fbf4",
+                        "type": "node",
+                        "parent": "2037207a8fe97e",
+                        "children": [
+                            {
+                                "id": "24e5c9ef07c87e",
+                                "type": "node",
+                                "parent": "550be04909fbf4",
+                                "children": [
+                                    {
+                                        "id": "17bc5ab72a1b48",
+                                        "type": "node",
+                                        "parent": "24e5c9ef07c87e",
+                                        "children": [
+                                            {
+                                                "id": "5ff3bdc19ddff4",
+                                                "type": "subtree",
+                                                "parent": null,
+                                                "nodeid": "470569f9fa7f3c",
+                                                "children": []
+                                            }
+                                        ],
+                                        "rules": [
+                                            {
+                                                "type": "question",
+                                                "id": "24e5c9ef07c87e",
+                                                "value": {
+                                                    "values": [
+                                                        "take a photo"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "470569f9fa7f3c",
+                                        "type": "node",
+                                        "parent": "24e5c9ef07c87e",
+                                        "children": [],
+                                        "rules": [
+                                            {
+                                                "type": "question",
+                                                "id": "24e5c9ef07c87e",
+                                                "value": {
+                                                    "type": "options",
+                                                    "values": [
+                                                        "no photo"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "defaults": {}
+            },
+            "webhooks": [
+                {
+                    "name": "log endpoint",
+                    "type": "log",
+                    "url": "https://[buttonkit]/api/v1/datastore/log",
+                    "method": "POST",
+                    "contentType": "json",
+                    "parameters": {
+                        "dynamic": {
+                            "presser": [
+                                {
+                                    "id": "470569f9fa7f3c_presser",
+                                    "type": "presser"
+                                }
+                            ],
+                            "pressed": [
+                                {
+                                    "id": "470569f9fa7f3c_pressed",
+                                    "type": "pressed"
+                                }
+                            ]
+                        },
+                        "static": {
+                            "_datastorename": "patrolissues"
+                        }
+                    },
+                    "webhookId": "470569f9fa7f3c"
+                }
+            ]
+        }
+    ]
+}
