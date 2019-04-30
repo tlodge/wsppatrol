@@ -1,5 +1,5 @@
 {
-    "packageId": "1896805f73ae7b",
+    "packageId": "131515eac0bf5b",
     "name": "patrols",
     "description": "reporting on issues noticed during patrols",
     "buttons": [
@@ -161,6 +161,77 @@
                     "webhookId": "470569f9fa7f3c"
                 }
             ]
+        },
+        {
+            "buttonId": "1278e8e027180e",
+            "name": "patrol logs",
+            "description": "button description",
+            "type": "action",
+            "questions": [
+                {
+                    "question": "patrol logs",
+                    "type": "datastoreitem",
+                    "values": {
+                        "storeId": "patrolissues",
+                        "schema": [
+                            {
+                                "id": "470569f9fa7f3c_pressed",
+                                "path": "470569f9fa7f3c_pressed",
+                                "alias": "patrol time",
+                                "default": ""
+                            },
+                            {
+                                "id": "2037207a8fe97e",
+                                "path": "2037207a8fe97e",
+                                "alias": "patroller",
+                                "default": ""
+                            }
+                        ],
+                        "dschema": [
+                            {
+                                "id": "470569f9fa7f3c_pressed",
+                                "path": "470569f9fa7f3c_pressed",
+                                "alias": "patrol time",
+                                "default": ""
+                            },
+                            {
+                                "id": "2037207a8fe97e",
+                                "path": "2037207a8fe97e",
+                                "alias": "patroller",
+                                "default": ""
+                            },
+                            {
+                                "id": "550be04909fbf4",
+                                "path": "550be04909fbf4",
+                                "alias": "notes",
+                                "default": ""
+                            },
+                            {
+                                "id": "17bc5ab72a1b48",
+                                "path": "17bc5ab72a1b48",
+                                "alias": "evidence",
+                                "default": ""
+                            }
+                        ],
+                        "filters": [],
+                        "limit": -1,
+                        "orderby": "pressed",
+                        "sortby": "asc"
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "1b822a4d99a39c",
+                    "number": 1
+                }
+            ],
+            "navigation": {
+                "id": "1b822a4d99a39c",
+                "type": "node",
+                "parent": null,
+                "children": [],
+                "defaults": {}
+            },
+            "webhooks": []
         }
     ]
 }
