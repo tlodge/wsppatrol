@@ -1,5 +1,5 @@
 {
-    "packageId": "131515eac0bf5b",
+    "packageId": "2ceb8b1ab0f70a",
     "name": "patrols",
     "description": "reporting on issues noticed during patrols",
     "buttons": [
@@ -92,7 +92,8 @@
                                                 "type": "subtree",
                                                 "parent": null,
                                                 "nodeid": "470569f9fa7f3c",
-                                                "children": []
+                                                "children": [],
+                                                "rules": []
                                             }
                                         ],
                                         "rules": [
@@ -125,9 +126,11 @@
                                             }
                                         ]
                                     }
-                                ]
+                                ],
+                                "rules": []
                             }
-                        ]
+                        ],
+                        "rules": []
                     }
                 ],
                 "defaults": {}
@@ -216,7 +219,8 @@
                         "filters": [],
                         "limit": -1,
                         "orderby": "pressed",
-                        "sortby": "asc"
+                        "sortby": "asc",
+                        "description": "This is a log of all patrols that have taken place recently"
                     },
                     "validators": [],
                     "compulsory": true,
