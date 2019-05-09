@@ -1,5 +1,5 @@
 {
-    "packageId": "2ceb8b1ab0f70a",
+    "packageId": "1281384f215adc",
     "name": "patrols",
     "description": "reporting on issues noticed during patrols",
     "buttons": [
@@ -188,6 +188,12 @@
                                 "path": "2037207a8fe97e",
                                 "alias": "patroller",
                                 "default": ""
+                            },
+                            {
+                                "id": "17bc5ab72a1b48",
+                                "path": "17bc5ab72a1b48",
+                                "alias": "evidence",
+                                "default": "no evidence"
                             }
                         ],
                         "dschema": [
