@@ -1,5 +1,5 @@
 {
-    "packageId": "1281384f215adc",
+    "packageId": "1cd2b1e639779e",
     "name": "patrols",
     "description": "reporting on issues noticed during patrols",
     "buttons": [
@@ -65,6 +65,25 @@
                     "compulsory": false,
                     "questionId": "17bc5ab72a1b48",
                     "number": 4
+                },
+                {
+                    "question": "what is issue about?",
+                    "type": "options",
+                    "values": {
+                        "options": [
+                            "lights",
+                            "leaks",
+                            "items in communal areas",
+                            "other"
+                        ],
+                        "multiple": "single",
+                        "none": false,
+                        "description": ""
+                    },
+                    "validators": [],
+                    "compulsory": true,
+                    "questionId": "289c7d10fddc64",
+                    "number": 5
                 }
             ],
             "navigation": {
@@ -73,61 +92,75 @@
                 "parent": null,
                 "children": [
                     {
-                        "id": "550be04909fbf4",
+                        "id": "289c7d10fddc64",
                         "type": "node",
                         "parent": "2037207a8fe97e",
                         "children": [
                             {
-                                "id": "24e5c9ef07c87e",
+                                "id": "550be04909fbf4",
                                 "type": "node",
-                                "parent": "550be04909fbf4",
+                                "parent": "289c7d10fddc64",
                                 "children": [
                                     {
-                                        "id": "17bc5ab72a1b48",
+                                        "id": "24e5c9ef07c87e",
                                         "type": "node",
-                                        "parent": "24e5c9ef07c87e",
+                                        "parent": "550be04909fbf4",
                                         "children": [
                                             {
-                                                "id": "5ff3bdc19ddff4",
-                                                "type": "subtree",
-                                                "parent": null,
-                                                "nodeid": "470569f9fa7f3c",
-                                                "children": [],
-                                                "rules": []
+                                                "id": "17bc5ab72a1b48",
+                                                "type": "node",
+                                                "parent": "24e5c9ef07c87e",
+                                                "children": [
+                                                    {
+                                                        "id": "5ff3bdc19ddff4",
+                                                        "type": "subtree",
+                                                        "parent": null,
+                                                        "nodeid": "470569f9fa7f3c",
+                                                        "children": [],
+                                                        "rules": []
+                                                    }
+                                                ],
+                                                "rules": [
+                                                    {
+                                                        "type": "question",
+                                                        "id": "24e5c9ef07c87e",
+                                                        "value": {
+                                                            "values": [
+                                                                "take a photo"
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "id": "470569f9fa7f3c",
+                                                "type": "node",
+                                                "parent": "24e5c9ef07c87e",
+                                                "children": [
+                                                    {
+                                                        "id": "23085e1c5d2962",
+                                                        "type": "node",
+                                                        "parent": "470569f9fa7f3c",
+                                                        "children": []
+                                                    }
+                                                ],
+                                                "rules": [
+                                                    {
+                                                        "type": "question",
+                                                        "id": "24e5c9ef07c87e",
+                                                        "value": {
+                                                            "type": "options",
+                                                            "values": [
+                                                                "no photo"
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
                                             }
                                         ],
-                                        "rules": [
-                                            {
-                                                "type": "question",
-                                                "id": "24e5c9ef07c87e",
-                                                "value": {
-                                                    "values": [
-                                                        "take a photo"
-                                                    ]
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "470569f9fa7f3c",
-                                        "type": "node",
-                                        "parent": "24e5c9ef07c87e",
-                                        "children": [],
-                                        "rules": [
-                                            {
-                                                "type": "question",
-                                                "id": "24e5c9ef07c87e",
-                                                "value": {
-                                                    "type": "options",
-                                                    "values": [
-                                                        "no photo"
-                                                    ]
-                                                }
-                                            }
-                                        ]
+                                        "rules": []
                                     }
-                                ],
-                                "rules": []
+                                ]
                             }
                         ],
                         "rules": []
@@ -162,6 +195,46 @@
                         }
                     },
                     "webhookId": "470569f9fa7f3c"
+                },
+                {
+                    "name": "notify endpoint",
+                    "type": "notify",
+                    "url": "https://[buttonkit]/api/v1/send",
+                    "method": "POST",
+                    "parameters": {
+                        "dynamic": {
+                            "recipients": [],
+                            "placeholders": [
+                                {
+                                    "id": "289c7d10fddc64",
+                                    "qid": "289c7d10fddc64",
+                                    "key": "value",
+                                    "type": "question"
+                                },
+                                {
+                                    "id": "550be04909fbf4",
+                                    "qid": "550be04909fbf4",
+                                    "key": "value",
+                                    "type": "question"
+                                }
+                            ]
+                        },
+                        "static": {
+                            "email": {
+                                "subject": "New Wharfside issue reported",
+                                "body": "A new issue has been reported at wharfside. Category: [289c7d10fddc64].  Notes (if any):[550be04909fbf4]"
+                            },
+                            "sms": {
+                                "body": ""
+                            },
+                            "message": {
+                                "subject": "",
+                                "body": ""
+                            },
+                            "recipients": []
+                        }
+                    },
+                    "webhookId": "23085e1c5d2962"
                 }
             ]
         },
