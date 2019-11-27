@@ -1,5 +1,5 @@
 {
-    "packageId": "2290387bd6d094",
+    "packageId": "2bdc70c61ab39c",
     "name": "patrols",
     "description": "reporting on issues noticed during patrols",
     "buttons": [
@@ -141,7 +141,8 @@
                                                         "id": "23085e1c5d2962",
                                                         "type": "node",
                                                         "parent": "470569f9fa7f3c",
-                                                        "children": []
+                                                        "children": [],
+                                                        "rules": []
                                                     }
                                                 ],
                                                 "rules": [
@@ -160,7 +161,8 @@
                                         ],
                                         "rules": []
                                     }
-                                ]
+                                ],
+                                "rules": []
                             }
                         ],
                         "rules": []
@@ -265,7 +267,7 @@
                             {
                                 "id": "289c7d10fddc64",
                                 "path": "289c7d10fddc64",
-                                "alias": "what is issue about?",
+                                "alias": "type",
                                 "default": ""
                             },
                             {
